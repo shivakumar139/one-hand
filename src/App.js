@@ -1,9 +1,14 @@
 import './App.css';
+import { ChakraProvider } from '@chakra-ui/react'
+import Navbar from './components/Navbar';
+
 
 function App() {
   return (
-    <h1>Shree Ganesh</h1>
-  );
+    <ChakraProvider>
+      <Navbar/>
+    </ChakraProvider>
+  )
 }
 
 export default App;
