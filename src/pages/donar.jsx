@@ -1,6 +1,8 @@
 import { Box, Button, Container, FormControl, FormLabel, Input, Select } from "@chakra-ui/react"
 import { useState } from "react";
-import IndianStates from "../utils/IndianStates.json";
+import StateSelect from "../components/StateSelect";
+import BloodSelect from "../components/BloodSelect";
+import { DonationType } from "../components/DonationType";
 
 
 export const Donar = () => {
@@ -30,14 +32,9 @@ export const Donar = () => {
             
 
             <Box py={3}>
-                <FormLabel>Donation Type</FormLabel>
-                <Select placeholder='Select Donation Type' onChange={handleChange}>
-                    <option value="Blood">Blood</option>
-                    <option value="Pads">Pads</option>
-                    <option value="Oxygen Cylinder">Oxygen Cylinder</option>
-                    <option value="Medicines">Medicines</option>
-                    <option value="Others">Others</option>
-                </Select>
+
+                <DonationType formLabel="Donation Type" onChange={handleChange}/>
+
             </Box>
 
             {isBloodSelected?"":<Box>
@@ -47,33 +44,12 @@ export const Donar = () => {
 
             {/* Blood type */}
             {isBloodSelected?<Box py={3}>
-                <FormLabel>Blood Type</FormLabel>
-                <Select placeholder='Select Donation Type'>
-                    <option value="O-">O-</option>
-                    <option>O+</option>
-                    <option>A-</option>
-                    <option>A+</option>
-                    <option>B-</option>
-                    <option>B+</option>
-                    <option>AB-</option>
-                    <option>AB+</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>O</option>
-                    <option>AB</option>
-                </Select>
+                <BloodSelect/>
             </Box>:""}
 
 
             <Box py={3}>
-                <FormLabel>State</FormLabel>
-                <Select placeholder='Select State'>
-
-                    {IndianStates?.map(state =>{
-                        return <option key={state.code} value={state.name}>{state.name}</option>
-                    })}
-
-                </Select>
+                <StateSelect/>
             </Box>
 
 

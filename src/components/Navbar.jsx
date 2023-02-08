@@ -1,4 +1,4 @@
-import { Flex, Heading, Img, Link, Box, Spacer, Button } from "@chakra-ui/react";
+import { Flex, Heading, Link, Box, Spacer, Button } from "@chakra-ui/react";
 
 const Navbar = ()=>{
     return(
