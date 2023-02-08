@@ -33,7 +33,7 @@ export const Donar = () => {
 
             <Box py={3}>
 
-                <DonationType formLabel="Donation Type" onChange={handleChange}/>
+                <DonationType formLabel="Donation Type" onSelect={handleChange}/>
 
             </Box>
 
@@ -44,12 +44,12 @@ export const Donar = () => {
 
             {/* Blood type */}
             {isBloodSelected?<Box py={3}>
-                <BloodSelect/>
+                <BloodSelect label="Blood Type"/>
             </Box>:""}
 
 
             <Box py={3}>
-                <StateSelect/>
+                <StateSelect label="states"/>
             </Box>
 
 
