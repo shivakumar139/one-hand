@@ -1,6 +1,8 @@
-import { Flex, Heading, Link, Box, Spacer, Button } from "@chakra-ui/react";
+import { Flex, Heading, Link, Box, Spacer, Button, Img } from "@chakra-ui/react";
 
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+
+import logo from "../utils/img/icon.png"
 const Navbar = ()=>{
 
     const navigate = useNavigate();
@@ -8,7 +10,7 @@ const Navbar = ()=>{
         <nav>
             <Flex px={9} py={3} bg="green.100" align="center">
                 <Box>
-                    <Heading>Logo</Heading>
+                    <img src={logo} className="navbar-brand" width="60" height="24"/>
                 </Box>
                 <Spacer/>
                 <Box>

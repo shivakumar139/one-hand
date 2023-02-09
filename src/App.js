@@ -5,6 +5,8 @@ import Donar from './pages/donar';
 import { Receiver } from './pages/Receiver';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { Home } from './pages/Home';
+import { Footer } from './components/Footer';
 
 
 
@@ -15,11 +17,12 @@ function App() {
       <Navbar/>
 
       <Routes>
-      <Route path="/" element={<Receiver/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/donar" element={<Donar/>}/>
         <Route path="/receiver" element={<Receiver/>}/>
 
       </Routes>
+      <Footer/>
       
       
     </ChakraProvider>

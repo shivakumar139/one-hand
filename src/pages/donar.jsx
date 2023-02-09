@@ -1,4 +1,4 @@
-import { Box, Button, Container, FormControl, FormLabel, Input, Select, useToast } from "@chakra-ui/react"
+import { Box, Button, Container, FormControl, FormLabel, Input } from "@chakra-ui/react"
 import { useState } from "react";
 import StateSelect from "../components/StateSelect";
 import BloodSelect from "../components/BloodSelect";
@@ -6,6 +6,7 @@ import { DonationType } from "../components/DonationType";
 import axiosInstance from "../api/axios";
 import toast from "react-hot-toast";
 import FormData from "form-data";
+import { useNavigate } from "react-router-dom";
 
 
 export const Donar = () => {
@@ -16,6 +17,7 @@ export const Donar = () => {
 
     const [searchObj, setSearchObj] = useState({})
 
+    const navigate = useNavigate()
     const saveData = (e)=>{
         
         const selectedType = e.target.value;
@@ -93,6 +95,8 @@ export const Donar = () => {
                         toast.error(errMsg)
                     });
             }
+
+            navigate("/receiver")
             
             
         }
