@@ -32,24 +32,24 @@ export const Receiver = () => {
     }
 
     const getData = async () =>{
-        let response;
         console.log("sending ->",searchObj);
-        try{
-            setLoading(true)
-            response = await axiosInstance.post("/search", {...searchObj})
+        setLoading(true)
 
+        axiosInstance.post("/search", {...searchObj}).then(response =>{
             const res = response.data.map(d => {
-                    return d;
-            })
+                            return d;
+                    })
             setResponseData(res)
             setLoading(false)  
             setSearchObj(initialValue)
-            
-        }catch(error){
+        }, (error) =>{
+            console.log("error -> ", error)
             const errMsg = error.response.data.message;
             toast.error(errMsg)
             setLoading(false)
-        }
+            setSearchObj(initialValue)
+        })
+
 
     }
     
@@ -84,8 +84,8 @@ export const Receiver = () => {
                 return <Card p={5} gap={2} key={data.id} my={4} maxW="sm" borderBottom="4px solid green" borderRadius="lg" boxShadow="xl">
                         <Heading size="md" pt={2}>{data.fullName.toUpperCase()}</Heading>
                         <Text>{data.phoneNo}</Text>
-                        <Text>{data.bloodType}</Text>
-                        <Text>{data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)}</Text>
+                        <Text>{data?.bloodType}</Text>
+                        <Text>{data?.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)}</Text>
                         <Text>{data.state.charAt(0).toUpperCase() + data.state.slice(1)}</Text>
                         <Text>{data.city.charAt(0).toUpperCase() + data.city.slice(1)}</Text>
                         
