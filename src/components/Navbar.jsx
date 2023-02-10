@@ -16,7 +16,7 @@ const Navbar = ()=>{
                 <Box>
                     <Link p={3} as={RouterLink} to="/">Home</Link>
                     <Link p={3} as={RouterLink} to="/receiver">Receiver</Link>
-                    <Link p={3} as={RouterLink} to="/contact">Contact us</Link>
+                    <Link p={3} as={RouterLink} to="/ngo">Search Ngo</Link>
                 </Box>
                 <Spacer/>
                 <Box>

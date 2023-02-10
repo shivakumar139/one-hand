@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Home } from './pages/Home';
 import { Footer } from './components/Footer';
+import Ngo from './pages/Ngo';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/donar" element={<Donar/>}/>
         <Route path="/receiver" element={<Receiver/>}/>
+        <Route path="/ngo" element={<Ngo/>}/>
 
       </Routes>
       <Footer/>

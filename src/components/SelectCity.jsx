@@ -13,7 +13,7 @@ const SelectCity = ({state, onSelect, label, data}) => {
   return (
     <>
         <FormLabel>{label}</FormLabel>
-        <Select placeholder='Select State' onChange={onSelect} name="city" value={data}>
+        <Select placeholder='Select City' onChange={onSelect} name="city" value={data}>
 
             {cityArr?.map((key, index) =>{
                 return <option key={index} value={key}>{key}</option>
