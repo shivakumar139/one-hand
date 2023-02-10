@@ -1,10 +1,10 @@
 import { FormLabel, Select } from "@chakra-ui/react";
 
-const BloodSelect = ({label, onSelect})=>{
+const BloodSelect = ({label, onSelect, data})=>{
     return(
         <>
             <FormLabel>{label}</FormLabel>
-            <Select placeholder='Select Donation Type' name="bloodType" onChange={onSelect} >
+            <Select placeholder='Select Donation Type' name="bloodType" onChange={onSelect} value={data}>
                 <option value="O-">O-</option>
                 <option value="O+">O+</option>
                 <option value="A-">A-</option>

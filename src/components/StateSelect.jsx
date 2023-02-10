@@ -1,14 +1,18 @@
-import IndianStates from "../utils/IndianStates.json";
 import { Select, FormLabel } from "@chakra-ui/react";
+import states from "../utils/states.json"
 
-const StateSelect = ({label, onSelect}) => {
+const StateSelect = ({label, onSelect, data}) => {
+
+  const district = [...Object.keys(states)]
+  district.sort()
+  
   return (
     <>
         <FormLabel>{label}</FormLabel>
-        <Select placeholder='Select State' onChange={onSelect} name="state">
+        <Select placeholder='Select State' onChange={onSelect} name="state" value={data}>
 
-            {IndianStates?.map(state =>{
-                return <option key={state.code} value={state.name}>{state.name}</option>
+            {district?.map((state, index) =>{
+                return <option key={index} value={state}>{state}</option>
             })}
 
         </Select>
